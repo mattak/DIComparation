@@ -64,10 +64,6 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
 
-    // added
-    implementation 'androidx.multidex:multidex:2.0.1'
-    implementation "com.squareup.retrofit2:retrofit:2.9.0"
-
     // hilt
     implementation 'com.google.dagger:hilt-android:2.45'
     kapt 'com.google.dagger:hilt-compiler:2.45'
@@ -75,4 +71,7 @@ dependencies {
     kaptAndroidTest 'com.google.daggar:hilt-compiler:2.45'
     testImplementation 'com.google.daggar:hilt-android-testing:2.45'
     kaptTest 'com.google.daggar:hilt-compiler:2.45'
+
+    // added
+    implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
 }
