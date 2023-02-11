@@ -1,7 +1,6 @@
 package me.mattak.dicomparation.di
 
-import me.mattak.dicomparation.domain.repository.UserRepository
-import me.mattak.dicomparation.domain.repository.UserRepositoryImpl
+import me.mattak.dicomparation.domain.repository.*
 import org.koin.dsl.module
 
 val repositoryModule = module {
