@@ -10,9 +10,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import dagger.hilt.android.AndroidEntryPoint
+import me.mattak.dicomparation.domain.AnalyticsAdapter
 import me.mattak.dicomparation.ui.theme.DIComparationTheme
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    @Inject
+    lateinit var analytics: AnalyticsAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -26,6 +33,8 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
+        analytics.execute()
     }
 }
 
