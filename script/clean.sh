@@ -9,3 +9,4 @@ cp HiltUseCaseModule.kt apphilt/src/main/java/me/mattak/dicomparation/di/UseCase
 
 find appbinding/src/main/java -type f -name 'Generated*.kt' | xargs rm
 find appbinding/src/main/res/layout -type f -name 'generated_*.xml' | xargs rm
+find appcompose/src/main/java -type f -name 'Generated*.kt' | xargs rm
