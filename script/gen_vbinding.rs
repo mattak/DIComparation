@@ -25,8 +25,7 @@ class __NAME__(private val binding: __BINDING__) : RecyclerView.ViewHolder(
     }
 
     fun bind(cell: TextCell) {
-        binding.value = cell.text
-        binding.executePendingBindings()
+        binding.text.text = cell.text
     }
 }
     TEMPLATE
@@ -37,26 +36,15 @@ end
 def create_layout(name: String) 
   template = <<-TEMPLATE
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-
-        <variable
-            name="value"
-            type="String" />
-    </data>
-
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="@{value}"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:text="@tools:sample/lorem" />
-</layout>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    tools:text="@tools:sample/lorem" />
   TEMPLATE
   return template
 end
@@ -70,7 +58,7 @@ if ARGV.size < 1
 end
 
 generateCount = ARGV[0].to_i
-rootname="appbinding"
+rootname="appvbinding"
 viewHolderDirectory = "#{rootname}/src/main/java/me/mattak/dicomparation/ui"
 layoutDirectory = "#{rootname}/src/main/res/layout"
 viewHolders = []
