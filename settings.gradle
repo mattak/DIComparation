@@ -13,7 +13,9 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "DI Comparation"
+//include ':appdagger'
 //include ':apphilt'
-//include ':appkoin'
-//include ':appbinding'
-include ':appcompose'
+include ':appkoin'
+//include ':appdbinding'
+//include ':appvbinding'
+//include ':appcompose'
